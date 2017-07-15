@@ -1,0 +1,81 @@
+﻿<html>
+<head>
+
+<title>CSS Secrets 2.0</title>
+<link rel="icon" href="favicon.png" type="image/x-icon">
+<style>
+body {background-color:#FAFAFA;margin:0px;}
+@font-face {
+   font-family: sansation_light;
+   src: url('https://439527e125a3fda14cecdea6834ea4b9db2a7884.googledrive.com/host/0B6ZcYdRJVC-ZZFRoS3pqdzNFUTA/sansation_light.woff');
+}
+#container {
+	width:700px;
+	background-color:white;
+	margin-left:auto;
+	margin-right:auto;
+	padding:20px;
+	box-shadow: 5px 5px 5px #DDDDDD;
+}
+#container img {
+	height:200px;
+	width:200px;
+	padding-left:250;
+}
+label {
+	font-size:16px;
+	line-height:120%;
+	font-weight:bold;
+}
+textarea, input {
+	width:550px;
+}
+#info {
+	padding-left:70;
+	padding-right:70;
+	font-family: sansation_light;
+}
+
+
+</style>
+
+<script>
+function myIP() {
+    if (window.XMLHttpRequest) xmlhttp = new XMLHttpRequest();
+    else xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    xmlhttp.open("GET","https://api.ipify.org/?format=jsonp",false);
+    xmlhttp.send();
+    hostipInfo = xmlhttp.responseText.split("\":\"");
+	hostipInfo = hostipInfo[1].split("\"\}\)\;");
+    return hostipInfo[0];
+}
+</script>
+</head>
+<body>
+<div id="container">
+<img src="logo.jpg" />
+<div id="info">Welcome Everyone!  <br>Feel free to share your secrets anonymously :D <p>歡迎大家!  <br>請隨意匿名分享你的秘密 :D</p>
+<p>
+
+</p>
+<a href="http://fb.com/CREATIVESecrets2.0">http://facebook.com/CREATIVESecrets2.0</a></div>
+<form action="https://docs.google.com/forms/d/e/1FAIpQLScJ3F0QaaZlQ-akasEB-qG6nvf3LDilyBw3qbYunG_o2damFg/formResponse" method="POST" id="ss-form" target="_self" onsubmit=""><ol role="list" class="ss-question-list" style="padding-left:70px;">
+<input type="hidden" name="entry.1251662893" id="entry_1251662893" value="" class="ss-q-short" dir="auto" aria-label="I  " title="">
+<label>What do you want?</label><br />
+<input name="entry.970444414" value="ps" role="radio" class="ss-q-radio valid" aria-label="ps" type="radio" style="width:50px;" checked="checked" ><span style="font-family: sansation_light;"> Post a new secret</span> <br />
+<input name="entry.970444414" value="cm"  role="radio" class="ss-q-radio valid" aria-label="cm" type="radio" style="width:50px;"> <span style="font-family: sansation_light;"> Comment on post number: </span><input name="entry.1279526781" value="" class="ss-q-short valid" id="entry_404218802" dir="auto" aria-label="CMNO  " title="" type="text" style="width:300px;" placeholder="Post number you want to comment."><br />
+<label>What is your secret?</label><br>
+<textarea name="entry.1406447740" rows="8" cols="5" class="ss-q-long" id="entry_239828849" dir="auto" aria-label="Secret  "required=""></textarea><br>
+<br><label>Link to Image</label>
+<p id="info" style="padding-left:0px;">Leave it blank if you don't have any photo to post. <br />Please note that the photos need appropriate description to be posted.</p>
+<input type="text" name="entry.1720066230" value="" class="ss-q-short" id="entry_862952581" dir="auto" aria-label="Image  " title="" placeholder="e.g. http://www.css.edu.hk/images/stories/principal.jpg">
+<br><br><input type="submit" value="Submit" style="width:80px">
+</form>
+</div>
+
+<script>
+box = document.getElementById("entry_1251662893");
+box.value = myIP();
+</script>
+</body>
+</html>
